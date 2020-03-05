@@ -6,7 +6,7 @@ Different types of networks
   - Basic
   - General
   - Temporal
-  - Bipaartite
+  - Bipartite
 
 Properties of complex networks
   - power law distributed
