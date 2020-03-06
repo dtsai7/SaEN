@@ -13,3 +13,12 @@ Properties of complex networks
   - strong and weak ties
   - high clustering
   - small world
+
+Network Datasets
+  - Collaboration Graphs
+  - Who-talks-to-whom Graphs
+  - Information Linkage Graphs
+  - Technological Networks
+  - Networks in the Natural World
+  
+Strong and Weak Ties
