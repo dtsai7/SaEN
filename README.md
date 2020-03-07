@@ -22,3 +22,9 @@ Network Datasets
   - Networks in the Natural World
   
 Strong and Weak Ties
+  - Triadic Closure
+  - The Strength of Weak Ties
+  - Tie Strength and Network Structure in Large-Scale Data
+  - Tie Strength, Social Media, and Passive Engagement
+  - Closure, Structural Holes, and Social Capital
+  - Advanced Material: Betweenness Measures and Graph Partitioning
