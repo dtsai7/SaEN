@@ -1,5 +1,7 @@
 # Social_and_Economic_Networks
 
+
+# Key Concepts
 Basic Definitions
 
 Different types of networks
@@ -28,3 +30,8 @@ Strong and Weak Ties
   - Tie Strength, Social Media, and Passive Engagement
   - Closure, Structural Holes, and Social Capital
   - Advanced Material: Betweenness Measures and Graph Partitioning
+
+
+# R Lab
+Social Network Lab in R (Duke University - Network Analysis Center)
+
