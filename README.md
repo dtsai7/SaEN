@@ -33,5 +33,5 @@ Strong and Weak Ties
 
 
 ### R Lab
-Social Network Lab in R (Duke University - Network Analysis Center)
+[Social Network Lab in R (Duke University - Network Analysis Center)](https://github.com/dtsai7/SaEN/blob/master/duke_social_network.R)
 
