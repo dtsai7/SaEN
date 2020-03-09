@@ -1,4 +1,4 @@
-# Social_and_Economic_Networks
+# Social and Economic Networks
 
 
 ### Key Concepts
