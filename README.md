@@ -1,7 +1,7 @@
 # Social_and_Economic_Networks
 
 
-# Key Concepts
+### Key Concepts
 Basic Definitions
 
 Different types of networks
@@ -32,6 +32,6 @@ Strong and Weak Ties
   - Advanced Material: Betweenness Measures and Graph Partitioning
 
 
-# R Lab
+### R Lab
 Social Network Lab in R (Duke University - Network Analysis Center)
 
