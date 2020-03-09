@@ -3,7 +3,9 @@
 
 ### Key Concepts
 Basic Definitions
-
+  - nodes
+  - edges
+  
 Different types of networks
   - Basic
   - General
@@ -30,7 +32,8 @@ Strong and Weak Ties
   - Tie Strength, Social Media, and Passive Engagement
   - Closure, Structural Holes, and Social Capital
   - Advanced Material: Betweenness Measures and Graph Partitioning
-
+  
+Positional Features
 
 ### R Lab
 [Social Network Lab in R (Duke University - Network Analysis Center)](https://github.com/dtsai7/SaEN/blob/master/duke_social_network.R)
