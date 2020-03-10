@@ -33,7 +33,12 @@ Strong and Weak Ties
   - Closure, Structural Holes, and Social Capital
   - Advanced Material: Betweenness Measures and Graph Partitioning
   
-Positional Features
+Connectionist Features vs. Positional Features
+  - connecitonist feaures: features emerging from the configuration of its ties. system-level features. 
+  - common connectionist features: density, average path length, transitivity, clustering, degree distribution
+
+  - positional features: node-level properties associated with occupying a particular place or performing a particualr role in a network. 
+  - common positional features: degree, closness centrality, betweeness centrality, eigenvector centrality
 
 ### R Lab
 [Social Network Lab in R (Duke University - Network Analysis Center)](https://github.com/dtsai7/SaEN/blob/master/duke_social_network.R)
