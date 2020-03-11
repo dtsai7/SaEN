@@ -230,6 +230,72 @@ discussion_Allcloseness = closeness(discussion_graph2, mode="all")
 discussion_Allcloseness = as.data.frame(discussion_Allcloseness)
 
 
+### betweenness centrality
+discussion_betweenness = betweenness(discussion_graph2)
+discussion_betweenness = as.data.frame(discussion_betweeness)
+
+## visualize
+#layout
+set.seed(3952)
+layout1 = layout.fruchterman.reingold(discussion_graph2, niter=500)
+
+# node options
+V(discussion_graph2)$size = betweenness(discussion_graph)/200
+V(discussion_graph2)$color = ifelse(discussion_attributes[V(discussion_graph2), 2] == "Researcher", "blue", "red")
+
+# edge options
+E(discussion_graph2)$color = "grey"
+
+plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label = NA)
+
+##result: only three high betweenness people
+
+
+
+### eigen vector centrality: people who are most connected to other highlt connected ones
+discussion_eigencentrality = eigen_centrality(discussion_graph2)
+discussion_eigencentrality = as.data.frame(discussion_eigencentrality)
+
+## visualize
+#layout
+set.seed(3952)
+layout1 = layout.fruchterman.reingold(discussion_graph2, niter=500)
+
+# node options
+V(discussion_graph2)$size = eigen_centrality(discussion_graph)/5
+V(discussion_graph2)$color = ifelse(discussion_attributes[V(discussion_graph2), 2] == "Researcher", "blue", "red")
+
+# edge options
+E(discussion_graph2)$color = "grey"
+
+plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label=NA)
+
+## result: highly central people, not same as the betweenness
+
+
+
+### we want to know how assorted the discussion network is
+### -> community detection techniques
+### community detection algorithms include
+### 1. by iteratively calculating edges betweenness
+### 2. by using eigenvector matrices
+### 3. by iteratively optimizing for modularity
+### 4. using random walk methods
+### 5. using label propogaiton techniques
+
+# edge-betweenness
+GNC = cluster_edge_betweenness(discussion_graph2, weights=NULL)
+V(discussion_graph2)$color = membership(GNC)
+discussion_graph2$paletter = diverging_pal(length(GNC))
+plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label=NA)
+
+
+
+
+
+
+
+
 
 
 
