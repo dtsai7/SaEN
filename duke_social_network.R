@@ -158,3 +158,63 @@ discussion_degreeDis2 = as.data.frame(discussion_degreeDis)
 qplot(discussion_degreeDis, data=discussion_degreeDis2, geom="histogram", binwidth= .001)
 
 
+## clustering coefficient
+discussion_trans = transitivity(discussion_graph2)
+colleague_trans = transitivity(colleague_graph2)
+
+
+## positional features
+# degree: in, out, all centrality
+discussion_outdegree = degree(discussion_graph2, mode="out")
+discussion_outdegree = as.data.frame(discussion_outdegree)
+
+discussion_indegree = degree(discussion_graph2, mode="in")
+discussion_indegree = as.data.frame(discussion_indegree)
+
+## in degree
+#layout
+set.seed(3952)
+layout1 = layout.fruchterman.reingold(discussion_graph2, niter=500)
+
+# node options
+V(discussion_graph2)$size = degree(discussion_graph, mode="in")/5
+V(discussion_graph2)$color = ifelse(discussion_attributes[V(discussion_graph2), 2] == "Researcher", "blue", "red")
+
+# edge options
+E(discussion_graph2)$color = "grey"
+
+plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label = NA)
+
+
+## out degree
+#layout
+set.seed(3952)
+layout1 = layout.fruchterman.reingold(discussion_graph2, niter=500)
+
+# node options
+V(discussion_graph2)$size = degree(discussion_graph, mode="out")/5
+V(discussion_graph2)$color = ifelse(discussion_attributes[V(discussion_graph2), 2] == "Researcher", "blue", "red")
+
+# edge options
+E(discussion_graph2)$color = "grey"
+
+plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label = NA)
+
+## result: mostly blue, more concentration   
+
+## all degree
+#layout
+set.seed(3952)
+layout1 = layout.fruchterman.reingold(discussion_graph2, niter=500)
+
+# node options
+V(discussion_graph2)$size = degree(discussion_graph, mode="all")/5
+V(discussion_graph2)$color = ifelse(discussion_attributes[V(discussion_graph2), 2] == "Researcher", "blue", "red")
+
+# edge options
+E(discussion_graph2)$color = "grey"
+
+plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label = NA)
+
+## result: more evenly distribution of red and blue, but bigger ones with blue
+
