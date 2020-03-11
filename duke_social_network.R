@@ -5,8 +5,8 @@ library(haven)
 library(ggplot2)
 
 # read data
-colleague_network = read_csv('PCMI_Personally Know_Combined Edgelist.csv')
-discussion_network = read_csv('PCMI_Discussion Network_Combined_Edgelist.csv')
+colleague_network = read_csv('dataset/PCMI_Personally Know_Combined Edgelist.csv')
+discussion_network = read_csv('dataset/PCMI_Discussion Network_Combined_Edgelist.csv')
 
 # create igraph style edge list and graph
 colleague_edgelist = colleague_network
@@ -76,7 +76,7 @@ plot(colleague_graph2, edge.arrow.size=0.25, edge.arrow.mode="-")
 
 #fifth try
 #import sample attirbutes
-colleague_attributes = read_csv('PCMI_Know Personally_Combined_Nodelist.csv')
+colleague_attributes = read_csv('dataset/PCMI_Know Personally_Combined_Nodelist.csv')
 
 set.seed(3952)
 layout1 = layout.fruchterman.reingold(colleague_graph2)
@@ -96,7 +96,7 @@ plot(colleague_graph2, edge.arrow.size=0.25, edge.arrow.mode="-")
 
 
 #sixth try
-colleague_attributes = read_csv('PCMI_Know Personally_Combined_Nodelist.csv')
+colleague_attributes = read_csv('dataset/PCMI_Know Personally_Combined_Nodelist.csv')
 
 set.seed(3952)
 layout1 = layout.fruchterman.reingold(colleague_graph2, nither=500)
@@ -112,7 +112,7 @@ plot(colleague_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label =
 
 #discussion network
 discussion_graph2 = simplify(discussion_graph, remove.multiple = TRUE, remove.loops = TRUE)
-discussion_attributes = read_csv('PCMI_Discussion Network_Combined_Nodelist.csv')
+discussion_attributes = read_csv('dataset/PCMI_Discussion Network_Combined_Nodelist.csv')
 
 
 set.seed(3952)
@@ -158,12 +158,12 @@ discussion_degreeDis2 = as.data.frame(discussion_degreeDis)
 qplot(discussion_degreeDis, data=discussion_degreeDis2, geom="histogram", binwidth= .001)
 
 
-## clustering coefficient
+### clustering coefficient
 discussion_trans = transitivity(discussion_graph2)
 colleague_trans = transitivity(colleague_graph2)
 
 
-## positional features
+### positional features
 # degree: in, out, all centrality
 discussion_outdegree = degree(discussion_graph2, mode="out")
 discussion_outdegree = as.data.frame(discussion_outdegree)
@@ -199,8 +199,8 @@ V(discussion_graph2)$color = ifelse(discussion_attributes[V(discussion_graph2), 
 E(discussion_graph2)$color = "grey"
 
 plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label = NA)
-
 ## result: mostly blue, more concentration   
+
 
 ## all degree
 #layout
@@ -215,6 +215,21 @@ V(discussion_graph2)$color = ifelse(discussion_attributes[V(discussion_graph2), 
 E(discussion_graph2)$color = "grey"
 
 plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label = NA)
-
 ## result: more evenly distribution of red and blue, but bigger ones with blue
+
+
+
+### closeness centrality
+discussion_Incloseness = closeness(discussion_graph2, mode="in")
+discussion_Incloseness = as.data.frame(discussion_Incloseness)
+
+discussion_Outcloseness = closeness(discussion_graph2, mode="out")
+discussion_Outcloseness = as.data.frame(discussion_Outcloseness)
+
+discussion_Allcloseness = closeness(discussion_graph2, mode="all")
+discussion_Allcloseness = as.data.frame(discussion_Allcloseness)
+
+
+
+
 
