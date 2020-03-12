@@ -290,12 +290,24 @@ discussion_graph2$paletter = diverging_pal(length(GNC))
 plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label=NA)
 
 
+### interactive visualizations
+require(visNetwork)
+
+## discussion graph
+# transform data 
+visnetwork_Disdata = toVisNetworkData(discussion_graph2, idToLabel = TRUE)
+dis_nodes = visnetwork_Disdata$nodes
+dis_edges = visnetwork_Disdata$edges
+# visualization
+visNetwork(dis_nodes, dis_edges)
 
 
+## colleague graph
+# transform data
+visnetwork_Colldata = toVisNetworkData(colleague_graph2, idToLabel = TRUE)
+coll_nodes = visnetwork_Colldata$nodes
+coll_edges = visnetwork_Colldata$edges
+# visualization
 
-
-
-
-
-
+visNetwork(coll_nodes, coll_edges)
 
