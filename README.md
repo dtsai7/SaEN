@@ -5,12 +5,8 @@
 Basic Definitions
   - nodes
   - edges
-  - directed network 
-  - undirected network
-  - weighted directed network ("row stochastic")
-  - path
-  - cycle
-  - geodesic (shortest path between two nodes)
+  - directed/undirected/weighted directed ("row stochastic") network 
+  - walk/path/cycle/geodesic
   
 Different types of networks
   - Basic
