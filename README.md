@@ -10,7 +10,7 @@ Basic Definitions
   - weighted directed network ("row stochastic")
   - path
   - cycle
-  - geodesic
+  - geodesic (shortest path between two nodes)
   
 Different types of networks
   - Basic
