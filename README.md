@@ -5,11 +5,9 @@
 Basic Definitions
   - nodes
   - edges
-
   - directed network 
   - undirected network
   - weighted directed network ("row stochastic")
-  
   - path
   - cycle
   - geodesic
