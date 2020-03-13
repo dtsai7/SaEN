@@ -37,7 +37,7 @@ Strong and Weak Ties
   - Advanced Material: Betweenness Measures and Graph Partitioning
   
 Connectionist Features vs. Positional Features
-  - connecitonist feaures: features emerging from the configuration of its ties. system-level features. 
+  - connectionist feaures: features emerging from the configuration of its ties. system-level features. 
   - common connectionist features: density, average path length, transitivity, clustering, degree distribution
 
   - positional features: node-level properties associated with occupying a particular place or performing a particualr role in a network. 
