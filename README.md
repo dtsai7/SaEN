@@ -8,6 +8,7 @@ Basic Definitions
   - directed/ undirected/ weighted directed ("row stochastic") network 
   - walk/ path/ cycle/ geodesic
   - diameter -> Theorem on Network Structure: for large n, average path length and diameter are approximately proportional to log(n)/log(d)
+  - Cayley tree: each nodes besides leaves has degree d
   
 Different types of networks
   - Basic
