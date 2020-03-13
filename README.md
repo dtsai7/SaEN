@@ -9,6 +9,7 @@ Basic Definitions
   - walk/ path/ cycle/ geodesic
   - diameter -> Theorem on Network Structure: for large n, average path length and diameter are approximately proportional to log(n)/log(d)
   - Cayley tree: each nodes besides leaves has degree d
+  - Chernoff Bounds
   
 Different types of networks
   - Basic
