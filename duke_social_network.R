@@ -289,6 +289,13 @@ V(discussion_graph2)$color = membership(GNC)
 discussion_graph2$paletter = diverging_pal(length(GNC))
 plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label=NA)
 
+# eigenvector matrices
+EigenVec = leading.eigenvector.community(discussion_graph2, steps = -1,
+                                         options = igraph.arpack.default)
+V(discussion_graph2)$color = membership(EigenVec)
+discussion_graph2$paletter = diverging_pal(length(EigenVec))
+plot(discussion_graph2, edge.arrow.size=0.25, edge.arrow.mode="-", vertex.label=NA)
+
 
 ### interactive visualizations
 require(visNetwork)
