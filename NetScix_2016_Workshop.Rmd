@@ -1,0 +1,26 @@
+---
+title: "NetSciX_2016_Workshop"
+author: "David Tsai"
+date: "3/20/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Reading network data from files
+```{r}
+nodes = read.csv("dataset/Dataset1-Media-Example-NODES.csv", header = T, as.is = T)
+edges = read.csv("dataset/Dataset1-Media-Example-EDGES.csv", header = T, as.is = T)
+
+head(nodes)
+head(edges)
+
+nrow(nodes)
+length(unique(nodes$id))
+
+nrow(edges)
+nrow(unique(edges[,c("from", "to")]))
+```
+
