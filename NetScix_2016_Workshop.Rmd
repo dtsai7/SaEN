@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Reading network data from files
+# Dataset 1: edgelist
 ```{r}
 nodes = read.csv("dataset/Dataset1-Media-Example-NODES.csv", header = T, as.is = T)
 edges = read.csv("dataset/Dataset1-Media-Example-EDGES.csv", header = T, as.is = T)
@@ -23,4 +24,32 @@ length(unique(nodes$id))
 nrow(edges)
 nrow(unique(edges[,c("from", "to")]))
 ```
+
+
+Collapse all links of the same type between the same two nodes by summing their weights, using aggregate() by “from”, “to”, & “type”. 
+```{r}
+edges = aggregate(edges[,3], edges[,-3], sum)
+edges = edges[order(edges$from, edges$to),]
+colnames(edges)[4] = "weight"
+rownames(edges) = NULL
+head(edges)
+```
+
+
+# Dataset 2: matrix
+```{r}
+nodes_user = read.csv("dataset/Dataset2-Media-User-Example-NODES.csv", header = T, 
+                      as.is = T)
+edges_user = read.csv("dataset/Dataset2-Media-User-Example-EDGES.csv", header = T, 
+                      row.names = 1)
+
+head(nodes_user)
+head(edges_user)
+```
+
+```{r}
+edges_user = as.matrix(edges_user)
+dim(edges_user)
+```
+
 
