@@ -48,3 +48,5 @@ Connectionist Features vs. Positional Features
 ### R Lab
 [Social Network Lab in R (Duke University - Network Analysis Center)](https://github.com/dtsai7/SaEN/blob/master/duke_social_network.R)
 
+[NetScix 2016 Workshop](https://github.com/dtsai7/SaEN/blob/master/NetScix_2016_Workshop.Rmd)
+
