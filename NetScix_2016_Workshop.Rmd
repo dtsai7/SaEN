@@ -53,3 +53,22 @@ dim(edges_user)
 ```
 
 
+## Turning networks into igraph objects
+# Dataset 1
+```{r}
+library(igraph)
+net = graph_from_data_frame(d = edges, vertices = nodes, directed = T)
+class(net)
+```
+
+Make a plot
+```{r}
+plot(net, edge.arrow.size = .5, vertex.label = NA)
+```
+
+Removing the loops in the graph
+```{r}
+net = simplify(net, remove.multiple = F, remove.loops = T)
+plot(net, edge.arrow.size = .5, vertex.label = NA)
+```
+
