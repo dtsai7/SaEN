@@ -72,3 +72,23 @@ net = simplify(net, remove.multiple = F, remove.loops = T)
 plot(net, edge.arrow.size = .5, vertex.label = NA)
 ```
 
+# Dataset 2
+```{r}
+net2 = graph_from_incidence_matrix(edges_user)
+table(V(net2)$type)
+
+net2.bp = bipartite.projection(net2)
+#calculate the projections
+proj = as_incidence_matrix(net2) %*% t(as_incidence_matrix(net2))
+proj2 = t(as_incidence_matrix(net2)) %*% as_incidence_matrix(net2)
+```
+
+Make plots
+```{r}
+plot(net2.bp$proj1, vertex.label.color = "black", vertext.label.dist = 1,
+     vertex.size = 7, vertex.label = nodes_user$media[!is.na(nodes_user$media.type)])
+
+plot(net2.bp$proj2, vertex.label.color = "black", vertext.label.dist = 1,
+     vertex.size = 7, vertex.label = nodes_user$media[is.na(nodes_user$media.type)])
+```
+
