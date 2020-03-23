@@ -92,3 +92,19 @@ plot(net2.bp$proj2, vertex.label.color = "black", vertext.label.dist = 1,
      vertex.size = 7, vertex.label = nodes_user$media[is.na(nodes_user$media.type)])
 ```
 
+```{r}
+# plot with curved edges and reduce arrow size
+plot(net, edge.arrow.size = .5, edge.curved = .1)
+```
+
+```{r}
+# set edge color to gray, and node color to orange.
+# replace the vertex label with the node names stored in "media"
+plot(net, edge.arrow.size = .3, edge.curved = 0,
+vertex.color = "orange", 
+vertex.frame.color = "#555555", 
+vertex.label = V(net)$media, 
+vertex.label.color="black", 
+vertex.label.cex=.7)
+```
+
