@@ -108,3 +108,12 @@ vertex.label.color="black",
 vertex.label.cex=.7)
 ```
 
+Plot only the labels of the nodes
+```{r}
+plot(net, vertex.shape = "none", 
+     ertex.label = V(net)$media, 
+     vertex.label.font = 3, 
+     vertex.label.color = "gray40", 
+     vertex.label.cex = .7, 
+     edge.color = "gray85")
+```
