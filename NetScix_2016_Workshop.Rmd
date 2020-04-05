@@ -108,7 +108,7 @@ vertex.label.color="black",
 vertex.label.cex=.7)
 ```
 
-Plot only the labels of the nodes
+plot only the labels of the nodes
 ```{r}
 plot(net, vertex.shape = "none", 
      ertex.label = V(net)$media, 
@@ -117,3 +117,15 @@ plot(net, vertex.shape = "none",
      vertex.label.cex = .7, 
      edge.color = "gray85")
 ```
+
+
+```{r}
+hist(edges$weight) 
+mean(edges$weight) 
+sd(edges$weight)
+
+cut.off = mean(edges$weight)
+net.sp =  delete_edges(net, E(net)[weight<cut.off]) 
+plot(net.sp)
+```
+
